@@ -1,5 +1,5 @@
 //
-//  ListCoordinator.swift
+//  HolidaysCoordinator.swift
 //  DesafioJoinin
 //
 //  Created by Igor Fortti on 10/08/23.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ListCoordinator {
+class HolidaysCoordinator {
     // MARK: - Properties
     private var navigationController: UINavigationController
     
@@ -19,8 +19,8 @@ class ListCoordinator {
     
     // MARK: - Public Methods
     public func start(list: [Holiday]) {
-        let vm = ListViewModel(coordinator: self, list: list)
-        let vc = ListViewController(viewModel: vm)
+        let vm = HolidaysViewModel(coordinator: self, list: list)
+        let vc = HolidaysViewController(viewModel: vm)
         self.navigationController.pushViewController(vc, animated: true)
     }
     

@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  HolidaysView.swift
 //  DesafioJoinin
 //
 //  Created by Igor Fortti on 09/08/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListView: UIView {
+class HolidaysView: UIView {
     // MARK: - Properties
     lazy var listHolidayTableView: UITableView = {
         let tableView = UITableView()

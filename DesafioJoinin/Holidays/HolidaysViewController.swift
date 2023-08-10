@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  HolidaysViewController.swift
 //  DesafioJoinin
 //
 //  Created by Igor Fortti on 09/08/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class HolidaysViewController: UIViewController {
     // MARK: - Properties
-    var viewModel: ListViewModel
-    var customView: ListView?
+    var viewModel: HolidaysViewModel
+    var customView: HolidaysView?
     
     // MARK: - Initializers
-    init(viewModel: ListViewModel) {
+    init(viewModel: HolidaysViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,7 +25,7 @@ class ListViewController: UIViewController {
     // MARK: - Override Methods
     override func loadView() {
         super.loadView()
-        customView = ListView(tableViewDelegate: self, tableViewDataSource: self)
+        customView = HolidaysView(tableViewDelegate: self, tableViewDataSource: self)
         view = customView
     }
     
@@ -39,7 +39,7 @@ class ListViewController: UIViewController {
     }
 }
 // MARK: - Extensions
-extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+extension HolidaysViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.list.count
     }

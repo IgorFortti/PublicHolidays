@@ -1,5 +1,5 @@
 //
-//  ListViewModel.swift
+//  HolidaysViewModel.swift
 //  DesafioJoinin
 //
 //  Created by Igor Fortti on 09/08/23.
@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - Protocols
 
-class ListViewModel {
+class HolidaysViewModel {
     // MARK: - Properties
-    private var coordinator: ListCoordinator
+    private var coordinator: HolidaysCoordinator
     var list: [Holiday] = []
     
     // MARK: - Initializer
-    init(coordinator: ListCoordinator, list: [Holiday]) {
+    init(coordinator: HolidaysCoordinator, list: [Holiday]) {
         self.coordinator = coordinator
         self.list = list
     }

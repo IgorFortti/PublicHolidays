@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F2468424980C2F7DAC66B20E /* Pods_DesafioJoinin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */; };
-		FA8F23C92A85119D00B50DC8 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F23C82A85119D00B50DC8 /* ListCoordinator.swift */; };
+		FA8F23C92A85119D00B50DC8 /* HolidaysCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F23C82A85119D00B50DC8 /* HolidaysCoordinator.swift */; };
 		FAA16E952A83D8430081F031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E942A83D8430081F031 /* AppDelegate.swift */; };
 		FAA16E972A83D8430081F031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E962A83D8430081F031 /* SceneDelegate.swift */; };
 		FAA16E992A83D8430081F031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E982A83D8430081F031 /* HomeViewController.swift */; };
@@ -21,15 +21,15 @@
 		FAAA11F92A85454100D19CE5 /* CountriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11F82A85454100D19CE5 /* CountriesCoordinator.swift */; };
 		FAAA11FC2A8572B200D19CE5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */; };
 		FAAA11FE2A8579D800D19CE5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11FD2A8579D800D19CE5 /* Alert.swift */; };
-		FAB5F69E2A83DCEF00F65990 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */; };
+		FAB5F69E2A83DCEF00F65990 /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F69D2A83DCEF00F65990 /* HolidaysViewController.swift */; };
 		FAB5F6A12A83DD0800F65990 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A02A83DD0800F65990 /* DetailViewController.swift */; };
 		FAB5F6A32A83DD3500F65990 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A22A83DD3500F65990 /* HomeView.swift */; };
-		FAB5F6A52A83DD4400F65990 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A42A83DD4400F65990 /* ListView.swift */; };
+		FAB5F6A52A83DD4400F65990 /* HolidaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A42A83DD4400F65990 /* HolidaysView.swift */; };
 		FAB5F6A72A83DD5000F65990 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A62A83DD5000F65990 /* DetailView.swift */; };
 		FAB5F6AD2A83F57F00F65990 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6AC2A83F57F00F65990 /* Holiday.swift */; };
 		FAB5F6AF2A8406CE00F65990 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6AE2A8406CE00F65990 /* HomeViewModel.swift */; };
 		FAB5F6B12A8408CC00F65990 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B02A8408CC00F65990 /* HomeCoordinator.swift */; };
-		FAB5F6B32A84093100F65990 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B22A84093100F65990 /* ListViewModel.swift */; };
+		FAB5F6B32A84093100F65990 /* HolidaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B22A84093100F65990 /* HolidaysViewModel.swift */; };
 		FAB5F6B72A8412B100F65990 /* ListHolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */; };
 		FAB5F6B92A8420DF00F65990 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B82A8420DF00F65990 /* Service.swift */; };
 		FAB5F6BB2A8420E700F65990 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6BA2A8420E700F65990 /* Country.swift */; };
@@ -42,7 +42,7 @@
 		C5765F68922940F7D35BA390 /* Pods-DesafioJoinin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJoinin.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJoinin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DE1441E8263AA36F253F47 /* Pods-DesafioJoinin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJoinin.release.xcconfig"; path = "Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin.release.xcconfig"; sourceTree = "<group>"; };
-		FA8F23C82A85119D00B50DC8 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		FA8F23C82A85119D00B50DC8 /* HolidaysCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysCoordinator.swift; sourceTree = "<group>"; };
 		FAA16E912A83D8430081F031 /* DesafioJoinin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJoinin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA16E942A83D8430081F031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA16E962A83D8430081F031 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,15 +57,15 @@
 		FAAA11F82A85454100D19CE5 /* CountriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCoordinator.swift; sourceTree = "<group>"; };
 		FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		FAAA11FD2A8579D800D19CE5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		FAB5F69D2A83DCEF00F65990 /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
 		FAB5F6A02A83DD0800F65990 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FAB5F6A22A83DD3500F65990 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FAB5F6A42A83DD4400F65990 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		FAB5F6A42A83DD4400F65990 /* HolidaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysView.swift; sourceTree = "<group>"; };
 		FAB5F6A62A83DD5000F65990 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FAB5F6AC2A83F57F00F65990 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		FAB5F6AE2A8406CE00F65990 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FAB5F6B02A8408CC00F65990 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		FAB5F6B22A84093100F65990 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		FAB5F6B22A84093100F65990 /* HolidaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewModel.swift; sourceTree = "<group>"; };
 		FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHolidayTableViewCell.swift; sourceTree = "<group>"; };
 		FAB5F6B82A8420DF00F65990 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FAB5F6BA2A8420E700F65990 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				FAB5F6A82A83DE9000F65990 /* Service */,
 				FAAA11ED2A8517F100D19CE5 /* Countries */,
 				FAB5F69C2A83DCCF00F65990 /* Detail */,
-				FAB5F69B2A83DCC700F65990 /* List */,
+				FAB5F69B2A83DCC700F65990 /* Holidays */,
 				FAB5F69A2A83DCB700F65990 /* Home */,
 				FAAA11FA2A85725600D19CE5 /* Utils */,
 				FAA16E942A83D8430081F031 /* AppDelegate.swift */,
@@ -172,16 +172,16 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		FAB5F69B2A83DCC700F65990 /* List */ = {
+		FAB5F69B2A83DCC700F65990 /* Holidays */ = {
 			isa = PBXGroup;
 			children = (
-				FA8F23C82A85119D00B50DC8 /* ListCoordinator.swift */,
-				FAB5F6B22A84093100F65990 /* ListViewModel.swift */,
-				FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */,
-				FAB5F6A42A83DD4400F65990 /* ListView.swift */,
+				FA8F23C82A85119D00B50DC8 /* HolidaysCoordinator.swift */,
+				FAB5F6B22A84093100F65990 /* HolidaysViewModel.swift */,
+				FAB5F69D2A83DCEF00F65990 /* HolidaysViewController.swift */,
+				FAB5F6A42A83DD4400F65990 /* HolidaysView.swift */,
 				FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */,
 			);
-			path = List;
+			path = Holidays;
 			sourceTree = "<group>";
 		};
 		FAB5F69C2A83DCCF00F65990 /* Detail */ = {
@@ -339,17 +339,17 @@
 				FAB5F6B92A8420DF00F65990 /* Service.swift in Sources */,
 				FAAA11EC2A85159300D19CE5 /* CountriesViewController.swift in Sources */,
 				FAB5F6B12A8408CC00F65990 /* HomeCoordinator.swift in Sources */,
-				FAB5F6A52A83DD4400F65990 /* ListView.swift in Sources */,
+				FAB5F6A52A83DD4400F65990 /* HolidaysView.swift in Sources */,
 				FAAA11F72A8519C500D19CE5 /* ListCountriesTableViewCell.swift in Sources */,
 				FAB5F6A32A83DD3500F65990 /* HomeView.swift in Sources */,
 				FAAA11F32A85184000D19CE5 /* CountriesViewModel.swift in Sources */,
 				FAB5F6BD2A8421C500F65990 /* GenericService.swift in Sources */,
 				FAB5F6BB2A8420E700F65990 /* Country.swift in Sources */,
 				FAAA11FE2A8579D800D19CE5 /* Alert.swift in Sources */,
-				FAB5F6B32A84093100F65990 /* ListViewModel.swift in Sources */,
+				FAB5F6B32A84093100F65990 /* HolidaysViewModel.swift in Sources */,
 				FAB5F6C32A844F9200F65990 /* DetailCoordinator.swift in Sources */,
-				FA8F23C92A85119D00B50DC8 /* ListCoordinator.swift in Sources */,
-				FAB5F69E2A83DCEF00F65990 /* ListViewController.swift in Sources */,
+				FA8F23C92A85119D00B50DC8 /* HolidaysCoordinator.swift in Sources */,
+				FAB5F69E2A83DCEF00F65990 /* HolidaysViewController.swift in Sources */,
 				FAB5F6AD2A83F57F00F65990 /* Holiday.swift in Sources */,
 				FAAA11F52A85197800D19CE5 /* CountriesView.swift in Sources */,
 				FAA16E972A83D8430081F031 /* SceneDelegate.swift in Sources */,

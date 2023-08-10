@@ -31,7 +31,7 @@ class HomeCoordinator {
     }
     
     public func routeToList(list: [Holiday]) {
-        let coordinator = ListCoordinator(navigationController: navigationController)
+        let coordinator = HolidaysCoordinator(navigationController: navigationController)
         coordinator.start(list: list)
     }
 }
