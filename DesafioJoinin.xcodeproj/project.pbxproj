@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F2468424980C2F7DAC66B20E /* Pods_DesafioJoinin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */; };
+		FA8F23C92A85119D00B50DC8 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F23C82A85119D00B50DC8 /* ListCoordinator.swift */; };
 		FAA16E952A83D8430081F031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E942A83D8430081F031 /* AppDelegate.swift */; };
 		FAA16E972A83D8430081F031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E962A83D8430081F031 /* SceneDelegate.swift */; };
 		FAA16E992A83D8430081F031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E982A83D8430081F031 /* HomeViewController.swift */; };
@@ -22,7 +23,6 @@
 		FAB5F6AF2A8406CE00F65990 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6AE2A8406CE00F65990 /* HomeViewModel.swift */; };
 		FAB5F6B12A8408CC00F65990 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B02A8408CC00F65990 /* HomeCoordinator.swift */; };
 		FAB5F6B32A84093100F65990 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B22A84093100F65990 /* ListViewModel.swift */; };
-		FAB5F6B52A84101700F65990 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B42A84101700F65990 /* ListCoordinator.swift */; };
 		FAB5F6B72A8412B100F65990 /* ListHolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */; };
 		FAB5F6B92A8420DF00F65990 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B82A8420DF00F65990 /* Service.swift */; };
 		FAB5F6BB2A8420E700F65990 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6BA2A8420E700F65990 /* Country.swift */; };
@@ -36,6 +36,7 @@
 		C5765F68922940F7D35BA390 /* Pods-DesafioJoinin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJoinin.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJoinin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DE1441E8263AA36F253F47 /* Pods-DesafioJoinin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJoinin.release.xcconfig"; path = "Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin.release.xcconfig"; sourceTree = "<group>"; };
+		FA8F23C82A85119D00B50DC8 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		FAA16E912A83D8430081F031 /* DesafioJoinin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJoinin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA16E942A83D8430081F031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA16E962A83D8430081F031 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		FAB5F6AE2A8406CE00F65990 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FAB5F6B02A8408CC00F65990 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		FAB5F6B22A84093100F65990 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		FAB5F6B42A84101700F65990 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCoordinator.swift; path = ../../../Desktop/ListCoordinator.swift; sourceTree = "<group>"; };
 		FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHolidayTableViewCell.swift; sourceTree = "<group>"; };
 		FAB5F6B82A8420DF00F65990 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FAB5F6BA2A8420E700F65990 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		FAB5F69B2A83DCC700F65990 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				FAB5F6B42A84101700F65990 /* ListCoordinator.swift */,
+				FA8F23C82A85119D00B50DC8 /* ListCoordinator.swift */,
 				FAB5F6B22A84093100F65990 /* ListViewModel.swift */,
 				FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */,
 				FAB5F6A42A83DD4400F65990 /* ListView.swift */,
@@ -309,7 +309,7 @@
 				FAB5F6BB2A8420E700F65990 /* Country.swift in Sources */,
 				FAB5F6B32A84093100F65990 /* ListViewModel.swift in Sources */,
 				FAB5F6C32A844F9200F65990 /* DetailCoordinator.swift in Sources */,
-				FAB5F6B52A84101700F65990 /* ListCoordinator.swift in Sources */,
+				FA8F23C92A85119D00B50DC8 /* ListCoordinator.swift in Sources */,
 				FAB5F69E2A83DCEF00F65990 /* ListViewController.swift in Sources */,
 				FAB5F6AD2A83F57F00F65990 /* Holiday.swift in Sources */,
 				FAA16E972A83D8430081F031 /* SceneDelegate.swift in Sources */,
