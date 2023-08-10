@@ -16,13 +16,34 @@ class HomeView: UIView {
     // MARK: - Properties
     weak var delegate: HomeViewDelegate?
     
+    lazy var bannerImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 30
+        image.image = UIImage(named: "BGBlue")
+        return image
+    }()
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Welcome to\nCheck Holidays"
+        label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        label.numberOfLines = 0
+        label.textColor = .white
+        label.textAlignment = .left
+        label.backgroundColor = .clear
+        return label
+    }()
+    
     lazy var countryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Código do País"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.text = "Choose a country"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .black
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.backgroundColor = .clear
         return label
     }()
@@ -37,9 +58,9 @@ class HomeView: UIView {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.backgroundColor = .white
         textField.textColor = .black
-        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        textField.attributedPlaceholder = NSAttributedString(string: "Digite o código do País a ser buscado",
-                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.textAlignment = .center
+        textField.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        textField.setCenteredPlaceholder(text: "Click Here")
         textField.keyboardType = .default
         textField.autocapitalizationType = .none
         textField.isSecureTextEntry = false
@@ -63,10 +84,10 @@ class HomeView: UIView {
     lazy var yearLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Ano"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.text = "Type a year"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .black
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.backgroundColor = .clear
         return label
     }()
@@ -81,9 +102,9 @@ class HomeView: UIView {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.backgroundColor = .white
         textField.textColor = .black
-        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        textField.attributedPlaceholder = NSAttributedString(string: "Digite o ano a ser buscado",
-                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.textAlignment = .center
+        textField.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        textField.setCenteredPlaceholder(text: "Example: 2020, 2023, 2026")
         textField.keyboardType = .numberPad
         textField.autocapitalizationType = .none
         textField.isSecureTextEntry = false
@@ -99,8 +120,10 @@ class HomeView: UIView {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.white.cgColor
         button.backgroundColor = .systemGray
-        button.setTitle("Preencha o país e o ano para continuar", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        button.setTitle("Choose a country and type a year\nto continue", for: .normal)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         return button
@@ -160,14 +183,16 @@ class HomeView: UIView {
     private func enableButton(areTextFieldsPopulate: Bool) {
         if areTextFieldsPopulate {
             continueButton.backgroundColor = .systemBlue
-            continueButton.setTitle("CONTINUAR", for: .normal)
+            continueButton.setTitle("NEXT", for: .normal)
         } else {
             continueButton.backgroundColor = .systemGray
-            continueButton.setTitle("Preencha o país e o ano para continuar", for: .normal)
+            continueButton.setTitle("Choose a country and type a year\nto continue", for: .normal)
         }
     }
     
     private func addSubviews() {
+        addSubview(bannerImageView)
+        bannerImageView.addSubview(titleLabel)
         addSubview(countryLabel)
         addSubview(countryTextField)
         countryTextField.addSubview(countryArrowButton)
@@ -178,13 +203,21 @@ class HomeView: UIView {
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            countryLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 200),
-            countryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            bannerImageView.topAnchor.constraint(equalTo: topAnchor),
+            bannerImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bannerImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bannerImageView.heightAnchor.constraint(equalToConstant: 180),
             
-            countryTextField.topAnchor.constraint(equalTo: countryLabel.bottomAnchor, constant: 5),
+            titleLabel.leadingAnchor.constraint(equalTo: bannerImageView.leadingAnchor, constant: 20),
+            titleLabel.bottomAnchor.constraint(equalTo: bannerImageView.bottomAnchor, constant: -20),
+            
+            countryLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150),
+            countryLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            countryTextField.topAnchor.constraint(equalTo: countryLabel.bottomAnchor, constant: 10),
             countryTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             countryTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            countryTextField.heightAnchor.constraint(equalToConstant: 40),
+            countryTextField.heightAnchor.constraint(equalToConstant: 56),
             
             countryArrowButton.centerYAnchor.constraint(equalTo: countryTextField.centerYAnchor),
             countryArrowButton.trailingAnchor.constraint(equalTo: countryTextField.trailingAnchor, constant: -5),
@@ -192,14 +225,14 @@ class HomeView: UIView {
             countryArrowButton.widthAnchor.constraint(equalToConstant: 30),
             
             yearLabel.topAnchor.constraint(equalTo: countryTextField.bottomAnchor, constant: 20),
-            yearLabel.leadingAnchor.constraint(equalTo: countryLabel.leadingAnchor),
+            yearLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            yearTextField.topAnchor.constraint(equalTo: yearLabel.bottomAnchor, constant: 5),
+            yearTextField.topAnchor.constraint(equalTo: yearLabel.bottomAnchor, constant: 10),
             yearTextField.leadingAnchor.constraint(equalTo: countryTextField.leadingAnchor),
             yearTextField.trailingAnchor.constraint(equalTo: countryTextField.trailingAnchor),
             yearTextField.heightAnchor.constraint(equalTo: countryTextField.heightAnchor),
             
-            continueButton.topAnchor.constraint(equalTo: yearTextField.bottomAnchor, constant: 40),
+            continueButton.topAnchor.constraint(equalTo: yearTextField.bottomAnchor, constant: 50),
             continueButton.leadingAnchor.constraint(equalTo: countryTextField.leadingAnchor),
             continueButton.trailingAnchor.constraint(equalTo: countryTextField.trailingAnchor),
             continueButton.heightAnchor.constraint(equalTo: countryTextField.heightAnchor),

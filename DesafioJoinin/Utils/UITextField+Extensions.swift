@@ -16,4 +16,17 @@ extension UITextField {
         toolbar.items = [flexSpace, doneButton]
         inputAccessoryView = toolbar
     }
+    
+    func setCenteredPlaceholder(text: String, font: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular), color: UIColor = .lightGray) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: color,
+            .paragraphStyle: paragraphStyle,
+            .font: font
+        ]
+        
+        self.attributedPlaceholder = NSAttributedString(string: text, attributes: attributes)
+    }
 }

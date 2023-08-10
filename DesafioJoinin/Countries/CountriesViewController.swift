@@ -71,4 +71,8 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedCell = viewModel.filteredList[indexPath.row]
         viewModel.didSelectedCountry(country: selectedCell)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 }
