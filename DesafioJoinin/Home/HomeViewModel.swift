@@ -44,7 +44,7 @@ class HomeViewModel {
                 if let result = result {
                     self?.coordinator.routeToList(list: result)
                 } else {
-                    self?.delegate?.checkCountryCodeFailure(message: "Infelizmente, não há informação disponível para o ano informado")
+                    self?.delegate?.getHolidayListFailure(message: "Não foi possível buscar os feriados para o ano informado")
                 }
             }
         } else {
@@ -61,7 +61,7 @@ class HomeViewModel {
             if let result = result {
                 self?.countryList = result
             } else {
-                
+                debugPrint("\(failure?.localizedDescription ?? nil ?? "")")
             }
         }
     }

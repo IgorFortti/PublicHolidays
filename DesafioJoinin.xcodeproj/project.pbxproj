@@ -20,6 +20,7 @@
 		FAAA11F72A8519C500D19CE5 /* ListCountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11F62A8519C500D19CE5 /* ListCountriesTableViewCell.swift */; };
 		FAAA11F92A85454100D19CE5 /* CountriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11F82A85454100D19CE5 /* CountriesCoordinator.swift */; };
 		FAAA11FC2A8572B200D19CE5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */; };
+		FAAA11FE2A8579D800D19CE5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11FD2A8579D800D19CE5 /* Alert.swift */; };
 		FAB5F69E2A83DCEF00F65990 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */; };
 		FAB5F6A12A83DD0800F65990 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A02A83DD0800F65990 /* DetailViewController.swift */; };
 		FAB5F6A32A83DD3500F65990 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A22A83DD3500F65990 /* HomeView.swift */; };
@@ -55,6 +56,7 @@
 		FAAA11F62A8519C500D19CE5 /* ListCountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCountriesTableViewCell.swift; sourceTree = "<group>"; };
 		FAAA11F82A85454100D19CE5 /* CountriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCoordinator.swift; sourceTree = "<group>"; };
 		FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		FAAA11FD2A8579D800D19CE5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FAB5F6A02A83DD0800F65990 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FAB5F6A22A83DD3500F65990 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */,
+				FAAA11FD2A8579D800D19CE5 /* Alert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				FAAA11F32A85184000D19CE5 /* CountriesViewModel.swift in Sources */,
 				FAB5F6BD2A8421C500F65990 /* GenericService.swift in Sources */,
 				FAB5F6BB2A8420E700F65990 /* Country.swift in Sources */,
+				FAAA11FE2A8579D800D19CE5 /* Alert.swift in Sources */,
 				FAB5F6B32A84093100F65990 /* ListViewModel.swift in Sources */,
 				FAB5F6C32A844F9200F65990 /* DetailCoordinator.swift in Sources */,
 				FA8F23C92A85119D00B50DC8 /* ListCoordinator.swift in Sources */,

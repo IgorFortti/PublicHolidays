@@ -84,10 +84,10 @@ extension HomeViewController: HomeViewModelDelegate {
     
     
     func checkCountryCodeFailure(message: String) {
-        print(message)
+        AlertController.shared.showAlert(title: "Error", message: message, controller: self)
     }
     
     func getHolidayListFailure(message: String) {
-        print(message)
+        AlertController.shared.showAlert(title: "Error", message: message, controller: self)
     }
 }
