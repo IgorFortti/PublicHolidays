@@ -56,12 +56,14 @@ extension HomeViewController: UITextFieldDelegate {
         customView?.checkTextFields()
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == customView?.countryTextField {
-            viewModel.didTapCountryTextField()
+            view.endEditing(true)
             customView?.isCountryFieldEditing = true
-            textField.resignFirstResponder()
+            viewModel.didTapCountryTextField()
+            return false
         }
+        return true
     }
 }
 

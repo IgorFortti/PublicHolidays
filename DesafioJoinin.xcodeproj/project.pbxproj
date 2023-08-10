@@ -19,6 +19,7 @@
 		FAAA11F52A85197800D19CE5 /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11F42A85197800D19CE5 /* CountriesView.swift */; };
 		FAAA11F72A8519C500D19CE5 /* ListCountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11F62A8519C500D19CE5 /* ListCountriesTableViewCell.swift */; };
 		FAAA11F92A85454100D19CE5 /* CountriesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11F82A85454100D19CE5 /* CountriesCoordinator.swift */; };
+		FAAA11FC2A8572B200D19CE5 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */; };
 		FAB5F69E2A83DCEF00F65990 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */; };
 		FAB5F6A12A83DD0800F65990 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A02A83DD0800F65990 /* DetailViewController.swift */; };
 		FAB5F6A32A83DD3500F65990 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6A22A83DD3500F65990 /* HomeView.swift */; };
@@ -53,6 +54,7 @@
 		FAAA11F42A85197800D19CE5 /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
 		FAAA11F62A8519C500D19CE5 /* ListCountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCountriesTableViewCell.swift; sourceTree = "<group>"; };
 		FAAA11F82A85454100D19CE5 /* CountriesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCoordinator.swift; sourceTree = "<group>"; };
+		FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		FAB5F69D2A83DCEF00F65990 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FAB5F6A02A83DD0800F65990 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FAB5F6A22A83DD3500F65990 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -120,12 +122,13 @@
 		FAA16E932A83D8430081F031 /* DesafioJoinin */ = {
 			isa = PBXGroup;
 			children = (
-				FAAA11ED2A8517F100D19CE5 /* Countries */,
 				FAB5F6AB2A83F56D00F65990 /* Model */,
 				FAB5F6A82A83DE9000F65990 /* Service */,
+				FAAA11ED2A8517F100D19CE5 /* Countries */,
 				FAB5F69C2A83DCCF00F65990 /* Detail */,
 				FAB5F69B2A83DCC700F65990 /* List */,
 				FAB5F69A2A83DCB700F65990 /* Home */,
+				FAAA11FA2A85725600D19CE5 /* Utils */,
 				FAA16E942A83D8430081F031 /* AppDelegate.swift */,
 				FAA16E962A83D8430081F031 /* SceneDelegate.swift */,
 				FAA16E9D2A83D8460081F031 /* Assets.xcassets */,
@@ -145,6 +148,14 @@
 				FAAA11F62A8519C500D19CE5 /* ListCountriesTableViewCell.swift */,
 			);
 			path = Countries;
+			sourceTree = "<group>";
+		};
+		FAAA11FA2A85725600D19CE5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA11FB2A8572B200D19CE5 /* UITextField+Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FAB5F69A2A83DCB700F65990 /* Home */ = {
@@ -316,6 +327,7 @@
 				FAA16E992A83D8430081F031 /* HomeViewController.swift in Sources */,
 				FAB5F6AF2A8406CE00F65990 /* HomeViewModel.swift in Sources */,
 				FAB5F6A72A83DD5000F65990 /* DetailView.swift in Sources */,
+				FAAA11FC2A8572B200D19CE5 /* UITextField+Extensions.swift in Sources */,
 				FAB5F6C12A844F4D00F65990 /* DetailViewModel.swift in Sources */,
 				FAB5F6B72A8412B100F65990 /* ListHolidayTableViewCell.swift in Sources */,
 				FAAA11F92A85454100D19CE5 /* CountriesCoordinator.swift in Sources */,

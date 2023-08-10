@@ -8,7 +8,7 @@
 import UIKit
 
 class CountriesView: UIView {
-    
+    // MARK: - Properties
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ class CountriesView: UIView {
         return tableView
     }()
     
-    
+    // MARK: - initializers
     init(tableViewDelegate: UITableViewDelegate, tableViewDataSource: UITableViewDataSource, searchBarDelegate: UISearchBarDelegate) {
         super.init(frame: .zero)
         self.listCountriesTableView.delegate = tableViewDelegate
@@ -37,6 +37,7 @@ class CountriesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private Methods
     private func setupUI() {
         addSubviews()
         setupContraints()

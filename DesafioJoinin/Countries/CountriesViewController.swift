@@ -9,8 +9,8 @@ import UIKit
 
 class CountriesViewController: UIViewController {
     // MARK: - Properties
-    var viewModel: CountriesViewModel
-    var customView: CountriesView?
+    private var viewModel: CountriesViewModel
+    private var customView: CountriesView?
     
     // MARK: - Initializers
     init(viewModel: CountriesViewModel) {

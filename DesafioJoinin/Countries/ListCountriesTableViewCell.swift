@@ -8,7 +8,7 @@
 import UIKit
 
 class ListCountriesTableViewCell: UITableViewCell {
-
+    // MARK: - Properties
     static let identifier: String = String(describing: ListCountriesTableViewCell.self)
     
     lazy var countryLabel: UILabel = {
@@ -20,7 +20,8 @@ class ListCountriesTableViewCell: UITableViewCell {
         label.backgroundColor = .clear
         return label
     }()
-
+    
+    // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -29,11 +30,12 @@ class ListCountriesTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: - Public Methods
     public func setupCell(data: Country) {
         countryLabel.text = data.name
     }
     
+    // MARK: - Private Methods
     private func setupUI() {
         addSubviews()
         setupContraints()

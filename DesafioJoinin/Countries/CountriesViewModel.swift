@@ -21,13 +21,13 @@ class CountriesViewModel {
     weak var filterDelegate: CountriesFilterDelegate?
     weak var selectionDelegate: CountriesViewModelSelectionDelegate?
     private var coordinator: CountriesCoordinator
-    var filteredList: [Country] = [] {
+    public var filteredList: [Country] = [] {
         didSet {
             filterDelegate?.filteredListReceivedData()
         }
     }
     
-    var list: [Country] = [] {
+    private var list: [Country] = [] {
         didSet {
             updateFilteredList(searchText: searchText)
         }
@@ -47,6 +47,7 @@ class CountriesViewModel {
         updateFilteredList(searchText: "")
     }
     
+    // MARK: - Private Methods
     private func updateFilteredList(searchText: String) {
         if searchText.isEmpty {
             filteredList = list
@@ -55,6 +56,7 @@ class CountriesViewModel {
         }
     }
     
+    // MARK: - Public Methods
     public func updateSearchText(text: String) {
         searchText = text
     }

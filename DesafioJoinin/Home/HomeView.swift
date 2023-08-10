@@ -87,6 +87,7 @@ class HomeView: UIView {
         textField.keyboardType = .numberPad
         textField.autocapitalizationType = .none
         textField.isSecureTextEntry = false
+        textField.addToolbarWithDoneButton(target: self, action: #selector(doneButtonTapped))
         return textField
     }()
     
@@ -121,6 +122,10 @@ class HomeView: UIView {
     // MARK: - Objc Method
     @objc func continueButtonTapped() {
         delegate?.continueButtonTapped()
+    }
+    
+    @objc private func doneButtonTapped() {
+        yearTextField.resignFirstResponder()
     }
     
     // MARK: - Public Method
