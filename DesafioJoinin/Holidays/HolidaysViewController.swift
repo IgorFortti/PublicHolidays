@@ -45,7 +45,7 @@ extension HolidaysViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListHolidayTableViewCell.identifier, for: indexPath) as? ListHolidayTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListHolidaysTableViewCell.identifier, for: indexPath) as? ListHolidaysTableViewCell
         cell?.setupCell(data: viewModel.list[indexPath.row])
         return cell ?? UITableViewCell()
     }
@@ -53,5 +53,9 @@ extension HolidaysViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = viewModel.list[indexPath.row]
         viewModel.didTapSelectedCell(holiday: selectedCell)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

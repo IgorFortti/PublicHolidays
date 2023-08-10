@@ -30,7 +30,7 @@
 		FAB5F6AF2A8406CE00F65990 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6AE2A8406CE00F65990 /* HomeViewModel.swift */; };
 		FAB5F6B12A8408CC00F65990 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B02A8408CC00F65990 /* HomeCoordinator.swift */; };
 		FAB5F6B32A84093100F65990 /* HolidaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B22A84093100F65990 /* HolidaysViewModel.swift */; };
-		FAB5F6B72A8412B100F65990 /* ListHolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */; };
+		FAB5F6B72A8412B100F65990 /* ListHolidaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B62A8412B100F65990 /* ListHolidaysTableViewCell.swift */; };
 		FAB5F6B92A8420DF00F65990 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6B82A8420DF00F65990 /* Service.swift */; };
 		FAB5F6BB2A8420E700F65990 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6BA2A8420E700F65990 /* Country.swift */; };
 		FAB5F6BD2A8421C500F65990 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5F6BC2A8421C500F65990 /* GenericService.swift */; };
@@ -66,7 +66,7 @@
 		FAB5F6AE2A8406CE00F65990 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FAB5F6B02A8408CC00F65990 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		FAB5F6B22A84093100F65990 /* HolidaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewModel.swift; sourceTree = "<group>"; };
-		FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHolidayTableViewCell.swift; sourceTree = "<group>"; };
+		FAB5F6B62A8412B100F65990 /* ListHolidaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHolidaysTableViewCell.swift; sourceTree = "<group>"; };
 		FAB5F6B82A8420DF00F65990 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FAB5F6BA2A8420E700F65990 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		FAB5F6BC2A8421C500F65990 /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 				FAB5F6B22A84093100F65990 /* HolidaysViewModel.swift */,
 				FAB5F69D2A83DCEF00F65990 /* HolidaysViewController.swift */,
 				FAB5F6A42A83DD4400F65990 /* HolidaysView.swift */,
-				FAB5F6B62A8412B100F65990 /* ListHolidayTableViewCell.swift */,
+				FAB5F6B62A8412B100F65990 /* ListHolidaysTableViewCell.swift */,
 			);
 			path = Holidays;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				FAB5F6A72A83DD5000F65990 /* DetailView.swift in Sources */,
 				FAAA11FC2A8572B200D19CE5 /* UITextField+Extensions.swift in Sources */,
 				FAB5F6C12A844F4D00F65990 /* DetailViewModel.swift in Sources */,
-				FAB5F6B72A8412B100F65990 /* ListHolidayTableViewCell.swift in Sources */,
+				FAB5F6B72A8412B100F65990 /* ListHolidaysTableViewCell.swift in Sources */,
 				FAAA11F92A85454100D19CE5 /* CountriesCoordinator.swift in Sources */,
 				FAA16E952A83D8430081F031 /* AppDelegate.swift in Sources */,
 				FAB5F6A12A83DD0800F65990 /* DetailViewController.swift in Sources */,

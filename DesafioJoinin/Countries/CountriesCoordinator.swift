@@ -22,7 +22,7 @@ class CountriesCoordinator {
     public func start(list: [Country], delegate: CountriesViewModelSelectionDelegate) {
         let vm = CountriesViewModel(coordinator: self, list: list, delegate: delegate)
         let vc = CountriesViewController(viewModel: vm)
-        let sheet = SheetViewController(controller: vc, sizes: [.fixed(400)])
+        let sheet = SheetViewController(controller: vc, sizes: [.fixed(600)])
         navigationController.present(sheet, animated: false)
     }
     

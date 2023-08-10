@@ -14,9 +14,9 @@ class ListCountriesTableViewCell: UITableViewCell {
     lazy var countryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .black
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.backgroundColor = .clear
         return label
     }()
@@ -48,7 +48,7 @@ class ListCountriesTableViewCell: UITableViewCell {
     private func setupContraints() {
         NSLayoutConstraint.activate([
             countryLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            countryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            countryLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
 }

@@ -13,8 +13,10 @@ class HolidaysView: UIView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.register(ListHolidayTableViewCell.self, forCellReuseIdentifier: ListHolidayTableViewCell.identifier)
+        tableView.register(ListHolidaysTableViewCell.self, forCellReuseIdentifier: ListHolidaysTableViewCell.identifier)
         tableView.backgroundColor = .white
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = .zero
         return tableView
     }()
     
@@ -43,7 +45,7 @@ class HolidaysView: UIView {
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            listHolidayTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 200),
+            listHolidayTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             listHolidayTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             listHolidayTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             listHolidayTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
