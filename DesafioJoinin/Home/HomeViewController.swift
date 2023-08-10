@@ -59,6 +59,7 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == customView?.countryTextField {
             viewModel.didTapCountryTextField()
+            customView?.isCountryFieldEditing = true
             textField.resignFirstResponder()
         }
     }
@@ -71,6 +72,10 @@ extension HomeViewController: HomeViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    func countriesViewControllerDismiss() {
+        customView?.isCountryFieldEditing = false
+    }
+    
     func countrySelected() {
         customView?.countryTextField.text = viewModel.countrySelected?.name
     }

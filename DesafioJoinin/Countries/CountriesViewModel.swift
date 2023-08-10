@@ -13,6 +13,7 @@ protocol CountriesFilterDelegate: AnyObject {
 
 protocol CountriesViewModelSelectionDelegate: AnyObject {
     func didSelectedCountry(country: Country)
+    func dismiss()
 }
 
 class CountriesViewModel {
@@ -28,27 +29,25 @@ class CountriesViewModel {
     
     var list: [Country] = [] {
         didSet {
-            updateFilteredList(with: searchText) // Atualiza a filteredList quando a list é definida
+            updateFilteredList(searchText: searchText)
         }
     }
     
     private var searchText: String = "" {
         didSet {
-            updateFilteredList(with: searchText) // Atualiza a filteredList quando o searchText muda
+            updateFilteredList(searchText: searchText)
         }
     }
-    
-    
     
     // MARK: - Initializer
     init(coordinator: CountriesCoordinator, list: [Country], delegate: CountriesViewModelSelectionDelegate) {
         self.coordinator = coordinator
         self.list = list
         self.selectionDelegate = delegate
-        updateFilteredList(with: "")
+        updateFilteredList(searchText: "")
     }
     
-    private func updateFilteredList(with searchText: String) {
+    private func updateFilteredList(searchText: String) {
         if searchText.isEmpty {
             filteredList = list
         } else {
@@ -63,5 +62,9 @@ class CountriesViewModel {
     public func didSelectedCountry(country: Country) {
         selectionDelegate?.didSelectedCountry(country: country)
         coordinator.backToHome()
+    }
+    
+    public func dismiss() {
+        selectionDelegate?.dismiss()
     }
 }

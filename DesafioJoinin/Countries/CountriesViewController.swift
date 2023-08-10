@@ -33,6 +33,11 @@ class CountriesViewController: UIViewController {
         super.viewDidLoad()
         viewModel.filterDelegate = self
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        viewModel.dismiss()
+    }
 }
 // MARK: - Extension
 extension CountriesViewController: CountriesFilterDelegate {

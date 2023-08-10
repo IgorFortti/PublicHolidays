@@ -46,6 +46,20 @@ class HomeView: UIView {
         return textField
     }()
     
+    private lazy var countryArrowButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        button.addTarget(self, action: #selector(countryArrowButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    var isCountryFieldEditing = false {
+        didSet {
+            updateArrowRotation()
+        }
+    }
+    
     lazy var yearLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -118,11 +132,24 @@ class HomeView: UIView {
         enableButton(areTextFieldsPopulate: areTextFieldsPopulated)
     }
     
+    
+    
     // MARK: - Private Methods
     private func setupUI() {
         backgroundColor = .systemGray6
         addSubviews()
         setupContraints()
+    }
+    
+    @objc private func countryArrowButtonTapped() {
+        countryTextField.becomeFirstResponder()
+    }
+    
+    private func updateArrowRotation() {
+        let rotationAngle: CGFloat = isCountryFieldEditing ? .pi : 0.0
+        UIView.animate(withDuration: 0.3) {
+            self.countryArrowButton.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        }
     }
     
     private func enableButton(areTextFieldsPopulate: Bool) {
@@ -138,6 +165,7 @@ class HomeView: UIView {
     private func addSubviews() {
         addSubview(countryLabel)
         addSubview(countryTextField)
+        countryTextField.addSubview(countryArrowButton)
         addSubview(yearLabel)
         addSubview(yearTextField)
         addSubview(continueButton)
@@ -152,6 +180,11 @@ class HomeView: UIView {
             countryTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             countryTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             countryTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            countryArrowButton.centerYAnchor.constraint(equalTo: countryTextField.centerYAnchor),
+            countryArrowButton.trailingAnchor.constraint(equalTo: countryTextField.trailingAnchor, constant: -5),
+            countryArrowButton.heightAnchor.constraint(equalToConstant: 30),
+            countryArrowButton.widthAnchor.constraint(equalToConstant: 30),
             
             yearLabel.topAnchor.constraint(equalTo: countryTextField.bottomAnchor, constant: 20),
             yearLabel.leadingAnchor.constraint(equalTo: countryLabel.leadingAnchor),

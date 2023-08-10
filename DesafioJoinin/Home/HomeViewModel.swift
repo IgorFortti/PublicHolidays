@@ -12,6 +12,7 @@ protocol HomeViewModelDelegate: AnyObject {
     func checkCountryCodeFailure(message: String)
     func getHolidayListFailure(message: String)
     func countrySelected()
+    func countriesViewControllerDismiss()
 }
 
 class HomeViewModel {
@@ -67,6 +68,10 @@ class HomeViewModel {
 }
 
 extension HomeViewModel: CountriesViewModelSelectionDelegate {
+    func dismiss() {
+        delegate?.countriesViewControllerDismiss()
+    }
+    
     func didSelectedCountry(country: Country) {
         countrySelected = country
     }
