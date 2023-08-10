@@ -32,13 +32,13 @@ class HomeViewModel {
     }
     
     // MARK: - Private Methods
-    private func checkCountryCode(for countryName: String) -> String? {
-        return countryList.first { $0.name == countryName }?.countryCode
-    }
+//    private func checkCountryCode(for countryName: String) -> String? {
+//        return countryList.first { $0.name == countryName }?.countryCode
+//    }
     
     // MARK: - Public Methods
-    public func didTapContinue(country: String, year: String) {
-        if let countryCode = checkCountryCode(for: country) {
+    public func didTapContinue(year: String) {
+        if let countryCode = countrySelected?.countryCode {
             service.getHolidayList(countryCode: countryCode, year: Int(year) ?? 0) { [weak self] result, failure in
                 if let result = result {
                     self?.coordinator.routeToList(list: result)
@@ -47,7 +47,7 @@ class HomeViewModel {
                 }
             }
         } else {
-            delegate?.checkCountryCodeFailure(message: "O País digitado não existe ou a digitação está incorreta")
+            delegate?.checkCountryCodeFailure(message: "Ocorreu um problema ao buscar os dados do país escolhido")
         }
     }
     
@@ -66,7 +66,7 @@ class HomeViewModel {
     }
 }
 
-extension HomeViewModel: CountriesViewModelDelegate {
+extension HomeViewModel: CountriesViewModelSelectionDelegate {
     func didSelectedCountry(country: Country) {
         countrySelected = country
     }

@@ -25,28 +25,41 @@ class CountriesViewController: UIViewController {
     // MARK: - Override Methods
     override func loadView() {
         super.loadView()
-        customView = CountriesView(tableViewDelegate: self, tableViewDataSource: self)
+        customView = CountriesView(tableViewDelegate: self, tableViewDataSource: self, searchBarDelegate: self)
         view = customView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.filterDelegate = self
     }
 }
 // MARK: - Extension
+extension CountriesViewController: CountriesFilterDelegate {
+    func filteredListReceivedData() {
+        customView?.listCountriesTableView.reloadData()
+    }
+}
+
+extension CountriesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.updateSearchText(text: searchText)
+    }
+}
+
 extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.list.count
+        return viewModel.filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListCountriesTableViewCell.identifier, for: indexPath) as? ListCountriesTableViewCell
-        cell?.setupCell(data: viewModel.list[indexPath.row])
+        cell?.setupCell(data: viewModel.filteredList[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell = viewModel.list[indexPath.row]
+        let selectedCell = viewModel.filteredList[indexPath.row]
         viewModel.didSelectedCountry(country: selectedCell)
     }
 }

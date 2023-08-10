@@ -25,10 +25,11 @@ class CountriesView: UIView {
     }()
     
     
-    init(tableViewDelegate: UITableViewDelegate, tableViewDataSource: UITableViewDataSource) {
+    init(tableViewDelegate: UITableViewDelegate, tableViewDataSource: UITableViewDataSource, searchBarDelegate: UISearchBarDelegate) {
         super.init(frame: .zero)
         self.listCountriesTableView.delegate = tableViewDelegate
         self.listCountriesTableView.dataSource = tableViewDataSource
+        self.searchBar.delegate = searchBarDelegate
         setupUI()
     }
     

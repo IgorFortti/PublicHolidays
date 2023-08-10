@@ -52,23 +52,6 @@ class HomeViewController: UIViewController {
 // MARK: - Extensions
 extension HomeViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == customView?.countryTextField {
-            if yearText == "" {
-                textField.resignFirstResponder()
-                customView?.yearTextField.becomeFirstResponder()
-            }
-            textField.resignFirstResponder()
-        } else {
-            if countryText == "" {
-                textField.resignFirstResponder()
-                customView?.countryTextField.becomeFirstResponder()
-            }
-            textField.resignFirstResponder()
-        }
-        return true
-    }
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         customView?.checkTextFields()
     }
@@ -83,7 +66,7 @@ extension HomeViewController: UITextFieldDelegate {
 
 extension HomeViewController: HomeViewDelegate {
     func continueButtonTapped() {
-        viewModel.didTapContinue(country: countryText, year: yearText)
+        viewModel.didTapContinue(year: yearText)
     }
 }
 
