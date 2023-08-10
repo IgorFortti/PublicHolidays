@@ -12,6 +12,10 @@ class CountriesView: UIView {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.barStyle = .default
+        searchBar.placeholder = "Search for a country"
+        searchBar.backgroundColor = .systemGray6
+        searchBar.returnKeyType = .search
         return searchBar
     }()
     
@@ -20,7 +24,7 @@ class CountriesView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.register(ListCountriesTableViewCell.self, forCellReuseIdentifier: ListCountriesTableViewCell.identifier)
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -52,8 +56,8 @@ class CountriesView: UIView {
         NSLayoutConstraint.activate([
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor),
-            searchBar.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-            searchBar.heightAnchor.constraint(equalToConstant: 50),
+            searchBar.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+            searchBar.heightAnchor.constraint(equalToConstant: 60),
             
             listCountriesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             listCountriesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),

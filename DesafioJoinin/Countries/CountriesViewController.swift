@@ -50,6 +50,10 @@ extension CountriesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.updateSearchText(text: searchText)
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
