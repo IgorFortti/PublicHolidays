@@ -31,7 +31,6 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,15 +53,5 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = viewModel.list[indexPath.row]
         viewModel.didTapSelectedCell(holiday: selectedCell)
-    }
-}
-
-extension ListViewController: ListViewModelDelegate {
-    func successRequest() {
-        customView?.listHolidayTableView.reloadData()
-    }
-    
-    func failureRequest() {
-        
     }
 }

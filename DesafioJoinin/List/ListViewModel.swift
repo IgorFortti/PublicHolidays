@@ -8,14 +8,9 @@
 import Foundation
 
 // MARK: - Protocols
-protocol ListViewModelDelegate: AnyObject {
-    func successRequest()
-    func failureRequest()
-}
 
 class ListViewModel {
     // MARK: - Properties
-    weak var delegate: ListViewModelDelegate?
     private var coordinator: ListCoordinator
     var list: [Holiday] = []
     

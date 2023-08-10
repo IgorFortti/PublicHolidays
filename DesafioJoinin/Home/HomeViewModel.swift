@@ -45,6 +45,10 @@ class HomeViewModel {
         }
     }
     
+    public func didTapCountryTextField() {
+        coordinator.routeToCountries(list: countryList)
+    }
+    
     public func getCountryList() {
         service.getCountryList { [weak self] result, failure in
             if let result = result {

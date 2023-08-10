@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class HomeViewController: UIViewController {
     // MARK: - Properties
@@ -71,6 +72,13 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         customView?.checkTextFields()
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == customView?.countryTextField {
+            viewModel.didTapCountryTextField()
+            textField.resignFirstResponder()
+        }
+    }
 }
 
 extension HomeViewController: HomeViewDelegate {
@@ -80,6 +88,7 @@ extension HomeViewController: HomeViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    
     func checkCountryCodeFailure(message: String) {
         print(message)
     }

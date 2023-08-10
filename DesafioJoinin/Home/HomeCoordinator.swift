@@ -25,6 +25,11 @@ class HomeCoordinator {
         
     }
     
+    public func routeToCountries(list: [Country]) {
+        let coordinator = CountriesCoordinator(navigationController: navigationController)
+        coordinator.start(list: list)
+    }
+    
     public func routeToList(list: [Holiday]) {
         let coordinator = ListCoordinator(navigationController: navigationController)
         coordinator.start(list: list)

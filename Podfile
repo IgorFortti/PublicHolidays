@@ -8,5 +8,6 @@ target 'DesafioJoinin' do
   # Pods for DesafioJoinin
 
 pod 'Alamofire'
+pod 'FittedSheets'
 
 end
