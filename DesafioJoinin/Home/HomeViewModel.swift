@@ -11,6 +11,7 @@ import Foundation
 protocol HomeViewModelDelegate: AnyObject {
     func checkCountryCodeFailure(message: String)
     func getHolidayListFailure(message: String)
+    func countrySelected()
 }
 
 class HomeViewModel {
@@ -19,6 +20,11 @@ class HomeViewModel {
     private var coordinator: HomeCoordinator
     private var service: Service = Service()
     var countryList: [Country] = []
+    var countrySelected: Country? {
+        didSet {
+            delegate?.countrySelected()
+        }
+    }
     
     // MARK: - Initializer
     init(coordinator: HomeCoordinator) {
@@ -46,7 +52,7 @@ class HomeViewModel {
     }
     
     public func didTapCountryTextField() {
-        coordinator.routeToCountries(list: countryList)
+        coordinator.routeToCountries(list: countryList, delegate: self)
     }
     
     public func getCountryList() {
@@ -57,5 +63,11 @@ class HomeViewModel {
                 
             }
         }
+    }
+}
+
+extension HomeViewModel: CountriesViewModelDelegate {
+    func didSelectedCountry(country: Country) {
+        countrySelected = country
     }
 }

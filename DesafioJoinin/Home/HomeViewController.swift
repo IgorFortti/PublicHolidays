@@ -88,6 +88,10 @@ extension HomeViewController: HomeViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    func countrySelected() {
+        customView?.countryTextField.text = viewModel.countrySelected?.name
+    }
+    
     
     func checkCountryCodeFailure(message: String) {
         print(message)

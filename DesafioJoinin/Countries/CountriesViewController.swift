@@ -44,4 +44,9 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.setupCell(data: viewModel.list[indexPath.row])
         return cell ?? UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = viewModel.list[indexPath.row]
+        viewModel.didSelectedCountry(country: selectedCell)
+    }
 }

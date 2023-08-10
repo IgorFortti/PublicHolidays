@@ -19,14 +19,14 @@ class CountriesCoordinator {
     }
     
     // MARK: - Public Methods
-    public func start(list: [Country]) {
-        let vm = CountriesViewModel(coordinator: self, list: list)
+    public func start(list: [Country], delegate: CountriesViewModelDelegate) {
+        let vm = CountriesViewModel(coordinator: self, list: list, delegate: delegate)
         let vc = CountriesViewController(viewModel: vm)
         let sheet = SheetViewController(controller: vc, sizes: [.fixed(400)])
         navigationController.present(sheet, animated: false)
     }
     
-    public func backToHome(list: [Holiday]) {
+    public func backToHome() {
         navigationController.dismiss(animated: false)
     }
 }
