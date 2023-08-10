@@ -10,11 +10,21 @@ import UIKit
 
 class DetailView: UIView {
     // MARK: - Properties
+    lazy var bannerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 30
+        view.backgroundColor = .systemGray6
+        return view
+    }()
+    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Confira detalhes e curiosidades sobre esse feriado"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.numberOfLines = 0
+        label.text = "Check out details and curiosities\nabout this public holiday"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.textColor = .black
         label.textAlignment = .left
         label.backgroundColor = .clear
@@ -155,14 +165,15 @@ class DetailView: UIView {
     
     
     private func setupUI() {
-        backgroundColor = .systemGray6
+        backgroundColor = .white
         addSubviews()
         setupContraints()
     }
     
     
     private func addSubviews() {
-        stackView.addArrangedSubview(descriptionLabel)
+        addSubview(bannerView)
+        bannerView.addSubview(descriptionLabel)
         stackView.addArrangedSubview(dateLabel)
         stackView.addArrangedSubview(localNameLabel)
         stackView.addArrangedSubview(nameLabel)
@@ -174,7 +185,15 @@ class DetailView: UIView {
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            bannerView.topAnchor.constraint(equalTo: topAnchor),
+            bannerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bannerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bannerView.heightAnchor.constraint(equalToConstant: 180),
+            
+            descriptionLabel.leadingAnchor.constraint(equalTo: bannerView.leadingAnchor, constant: 20),
+            descriptionLabel.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor, constant: -20),
+            
+            stackView.topAnchor.constraint(equalTo: bannerView.bottomAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
