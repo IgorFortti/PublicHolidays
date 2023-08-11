@@ -73,24 +73,12 @@ extension HomeViewController: HomeViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
-    func failureRequestCountries(message: String) {
-        AlertController.shared.showAlert(title: "Error", message: message, controller: self)
-    }
-    
     func countriesViewControllerDismiss() {
         customView?.isCountryFieldEditing = false
     }
     
-    func countrySelected() {
-        customView?.countryTextField.text = viewModel.countrySelected?.name
+    func countrySelected(countryName: String) {
+        customView?.countryTextField.text = countryName
     }
-    
-    
-    func checkCountryCodeFailure(message: String) {
-        AlertController.shared.showAlert(title: "Error", message: message, controller: self)
-    }
-    
-    func getHolidayListFailure(message: String) {
-        AlertController.shared.showAlert(title: "Error", message: message, controller: self)
-    }
+
 }

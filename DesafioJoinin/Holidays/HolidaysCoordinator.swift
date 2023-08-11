@@ -18,10 +18,17 @@ class HolidaysCoordinator {
     }
     
     // MARK: - Public Methods
-    public func start(list: [Holiday]) {
-        let vm = HolidaysViewModel(coordinator: self, list: list)
-        let vc = HolidaysViewController(viewModel: vm)
-        self.navigationController.pushViewController(vc, animated: true)
+    public func start(data: (String, Int)) {
+        let vm = HolidaysViewModel(coordinator: self)
+        vm.fetchRequest(data: data) { [weak self] success, errorMessage in
+            if success {
+                let vc = HolidaysViewController(viewModel: vm)
+                self?.navigationController.pushViewController(vc, animated: true)
+            } else {
+                AlertController.shared.showAlert(title: "Error", message: errorMessage ?? "Unknow error",
+                                                 controller: self?.navigationController ?? UINavigationController())
+            }
+        }
     }
     
     public func routeToDetail(holiday: Holiday) {

@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol CountriesViewModelRequestFailureDelegate: AnyObject {
-    func failureRequest(message: String)
-}
-
 protocol CountriesViewModelFilterDelegate: AnyObject {
     func filteredListReceivedData()
 }
@@ -22,7 +18,6 @@ protocol CountriesViewModelSelectionDelegate: AnyObject {
 
 class CountriesViewModel {
     // MARK: - Properties
-    weak var failureRequestDelegate: CountriesViewModelRequestFailureDelegate?
     weak var filterDelegate: CountriesViewModelFilterDelegate?
     weak var selectionDelegate: CountriesViewModelSelectionDelegate?
     private var service = Service()
@@ -47,12 +42,10 @@ class CountriesViewModel {
     
     // MARK: - Initializer
     init(coordinator: CountriesCoordinator,
-         selectionDelegate: CountriesViewModelSelectionDelegate,
-         failureRequestDelegate: CountriesViewModelRequestFailureDelegate) {
+         selectionDelegate: CountriesViewModelSelectionDelegate) {
         
         self.coordinator = coordinator
         self.selectionDelegate = selectionDelegate
-        self.failureRequestDelegate = failureRequestDelegate
         updateFilteredList(searchText: "")
     }
     
@@ -66,14 +59,14 @@ class CountriesViewModel {
     }
     
     // MARK: - Public Methods
-    public func fetchRequest(completion: @escaping () -> Void) {
+    public func fetchRequest(completion: @escaping (Bool, String?) -> Void) {
         service.getCountries { [weak self] result, failure in
             if let result = result {
                 self?.list = result
+                completion(true, nil)
             } else {
-                self?.failureRequestDelegate?.failureRequest(message: failure?.localizedDescription ?? "")
+                completion(false, failure?.localizedDescription)
             }
-            completion()
         }
     }
     

@@ -9,11 +9,8 @@ import Foundation
 
 // MARK: - Protocols
 protocol HomeViewModelDelegate: AnyObject {
-    func checkCountryCodeFailure(message: String)
-    func getHolidayListFailure(message: String)
-    func countrySelected()
+    func countrySelected(countryName: String)
     func countriesViewControllerDismiss()
-    func failureRequestCountries(message: String)
 }
 
 class HomeViewModel {
@@ -21,10 +18,10 @@ class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     private var coordinator: HomeCoordinator
     private var service: Service = Service()
-    var countryList: [Country] = []
+    
     var countrySelected: Country? {
         didSet {
-            delegate?.countrySelected()
+            delegate?.countrySelected(countryName: countrySelected?.name ?? "")
         }
     }
     
@@ -33,34 +30,15 @@ class HomeViewModel {
         self.coordinator = coordinator
     }
     
-    // MARK: - Private Methods
-//    private func checkCountryCode(for countryName: String) -> String? {
-//        return countryList.first { $0.name == countryName }?.countryCode
-//    }
-    
     // MARK: - Public Methods
     public func didTapContinue(year: String) {
         if let countryCode = countrySelected?.countryCode {
-            service.getHolidayList(countryCode: countryCode, year: Int(year) ?? 0) { [weak self] result, failure in
-                if let result = result {
-                    self?.coordinator.routeToList(list: result)
-                } else {
-                    self?.delegate?.getHolidayListFailure(message: "Não foi possível buscar os feriados para o ano informado")
-                }
-            }
-        } else {
-            delegate?.checkCountryCodeFailure(message: "Ocorreu um problema ao buscar os dados do país escolhido")
+            coordinator.routeToHolidays(data: (countryCode, Int(year) ?? 0))
         }
     }
     
     public func didTapCountryTextField() {
-        coordinator.routeToCountries(SelectionDelegate: self, failureRequestDelegate: self)
-    }
-}
-
-extension HomeViewModel: CountriesViewModelRequestFailureDelegate {
-    func failureRequest(message: String) {
-        delegate?.failureRequestCountries(message: message)
+        coordinator.routeToCountries(SelectionDelegate: self)
     }
 }
 

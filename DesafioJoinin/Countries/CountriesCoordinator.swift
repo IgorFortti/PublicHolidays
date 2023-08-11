@@ -19,22 +19,17 @@ class CountriesCoordinator {
     }
     
     // MARK: - Public Methods
-    public func start(selectionDelegate: CountriesViewModelSelectionDelegate,
-                      failureRequestDelegate: CountriesViewModelRequestFailureDelegate) {
-        
-        let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
-        let vm = CountriesViewModel(coordinator: self,
-                                    selectionDelegate: selectionDelegate,
-                                    failureRequestDelegate: failureRequestDelegate)
-        vm.fetchRequest() {
-            dispatchGroup.leave()
-        }
-        
-        dispatchGroup.notify(queue: .main) {
-            let vc = CountriesViewController(viewModel: vm)
-            let sheet = SheetViewController(controller: vc, sizes: [.fixed(600)])
-            self.navigationController.present(sheet, animated: false)
+    public func start(selectionDelegate: CountriesViewModelSelectionDelegate) {
+        let vm = CountriesViewModel(coordinator: self, selectionDelegate: selectionDelegate)
+        vm.fetchRequest { [weak self] success, errorMessage in
+            if success {
+                let vc = CountriesViewController(viewModel: vm)
+                let sheet = SheetViewController(controller: vc, sizes: [.fixed(600)])
+                self?.navigationController.present(sheet, animated: false)
+            } else {
+                AlertController.shared.showAlert(title: "Error", message: errorMessage ?? "Unknow error",
+                                                 controller: self?.navigationController ?? UINavigationController())
+            }
         }
     }
     

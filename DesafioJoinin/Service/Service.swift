@@ -11,7 +11,7 @@ import Alamofire
 class Service: GenericService {
     
     //MARK: - Public Methods
-    public func getHolidayList(countryCode: String, year: Int, completion: @escaping Completion<[Holiday]>) {
+    public func getHolidays(countryCode: String, year: Int, completion: @escaping Completion<[Holiday]>) {
         let url: String = "https://date.nager.at/api/v3/PublicHolidays/\(year)/\(countryCode)"
         AF.request(url, method: .get).validate(statusCode: 200...299).responseDecodable(of: [Holiday].self) { response in
             debugPrint(response)
