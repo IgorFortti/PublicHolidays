@@ -264,7 +264,6 @@ class DetailView: UIView {
     }
     
     // MARK: - Private Methods
-    
     private func populateLocalNameLabelDinamic(text: String) {
         localNameLabelDinamic.text = text
     }

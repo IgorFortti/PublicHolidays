@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     // MARK: - Properties
-    private var viewModel: DetailViewModel
+    private let viewModel: DetailViewModel
     private var customView: DetailView?
     
     // MARK: - Initializers
@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Overrides Methods
+    // MARK: - Override Methods
     override func loadView() {
         super.loadView()
         customView = DetailView(holidayName: viewModel.holidayName,

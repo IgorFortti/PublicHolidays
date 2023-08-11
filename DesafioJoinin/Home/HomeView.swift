@@ -67,7 +67,7 @@ class HomeView: UIView {
         return textField
     }()
     
-    private lazy var countryArrowButton: UIButton = {
+    lazy var countryArrowButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
@@ -142,13 +142,17 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Objc Method
+    // MARK: - Objc Methods
     @objc func continueButtonTapped() {
         delegate?.continueButtonTapped()
     }
     
     @objc private func doneButtonTapped() {
         yearTextField.resignFirstResponder()
+    }
+    
+    @objc private func countryArrowButtonTapped() {
+        countryTextField.becomeFirstResponder()
     }
     
     // MARK: - Public Method
@@ -160,17 +164,11 @@ class HomeView: UIView {
         enableButton(areTextFieldsPopulate: areTextFieldsPopulated)
     }
     
-    
-    
     // MARK: - Private Methods
     private func setupUI() {
         backgroundColor = .systemGray6
         addSubviews()
         setupContraints()
-    }
-    
-    @objc private func countryArrowButtonTapped() {
-        countryTextField.becomeFirstResponder()
     }
     
     private func updateArrowRotation() {

@@ -20,13 +20,8 @@ class CountriesViewModel {
     // MARK: - Properties
     weak var filterDelegate: CountriesViewModelFilterDelegate?
     weak var selectionDelegate: CountriesViewModelSelectionDelegate?
-    private var service = Service()
-    private var coordinator: CountriesCoordinator
-    public var filteredList: [Country] = [] {
-        didSet {
-            filterDelegate?.filteredListReceivedData()
-        }
-    }
+    private let service = Service()
+    private let coordinator: CountriesCoordinator
     
     private var list: [Country] = [] {
         didSet {
@@ -37,6 +32,12 @@ class CountriesViewModel {
     private var searchText: String = "" {
         didSet {
             updateFilteredList(searchText: searchText)
+        }
+    }
+    
+    public var filteredList: [Country] = [] {
+        didSet {
+            filterDelegate?.filteredListReceivedData()
         }
     }
     

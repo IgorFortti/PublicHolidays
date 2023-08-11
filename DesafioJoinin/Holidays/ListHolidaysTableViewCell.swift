@@ -8,7 +8,7 @@
 import UIKit
 
 class ListHolidaysTableViewCell: UITableViewCell {
-    
+    // MARK: - Properties
     static let identifier: String = String(describing: ListHolidaysTableViewCell.self)
     
     lazy var nameHolidayLabel: UILabel = {
@@ -55,7 +55,8 @@ class ListHolidaysTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
+    // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -64,15 +65,16 @@ class ListHolidaysTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: - Public Method
     public func setupCell(data: Holiday) {
-        selectionStyle = .none
         nameHolidayLabel.text = data.name
         localNameHolidayLabel.text = data.localName
         dateHolidayLabel.text = data.date
     }
     
+    // MARK: - Private Method
     private func setupUI() {
+        selectionStyle = .none
         addSubviews()
         setupContraints()
     }

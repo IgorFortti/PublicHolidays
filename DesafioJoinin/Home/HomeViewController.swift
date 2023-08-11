@@ -10,7 +10,7 @@ import FittedSheets
 
 class HomeViewController: UIViewController {
     // MARK: - Properties
-    private var viewModel: HomeViewModel
+    private let viewModel: HomeViewModel
     private var customView: HomeView?
     
     private var countryText: String {
@@ -80,5 +80,4 @@ extension HomeViewController: HomeViewModelDelegate {
     func countrySelected(countryName: String) {
         customView?.countryTextField.text = countryName
     }
-
 }

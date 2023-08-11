@@ -16,10 +16,10 @@ protocol HomeViewModelDelegate: AnyObject {
 class HomeViewModel {
     // MARK: - Properties
     weak var delegate: HomeViewModelDelegate?
-    private var coordinator: HomeCoordinator
-    private var service: Service = Service()
+    private let coordinator: HomeCoordinator
+    private let service: Service = Service()
     
-    var countrySelected: Country? {
+    private var countrySelected: Country? {
         didSet {
             delegate?.countrySelected(countryName: countrySelected?.name ?? "")
         }
@@ -41,7 +41,7 @@ class HomeViewModel {
         coordinator.routeToCountries(SelectionDelegate: self)
     }
 }
-
+// MARK: - Extensions
 extension HomeViewModel: CountriesViewModelSelectionDelegate {
     func dismiss() {
         delegate?.countriesViewControllerDismiss()
