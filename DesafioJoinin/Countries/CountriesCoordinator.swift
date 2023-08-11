@@ -24,7 +24,7 @@ class CountriesCoordinator {
         vm.fetchRequest { [weak self] success, errorMessage in
             if success {
                 let vc = CountriesViewController(viewModel: vm)
-                let sheet = SheetViewController(controller: vc, sizes: [.fixed(600)])
+                let sheet = SheetViewController(controller: vc, sizes: [.marginFromTop(400)])
                 self?.navigationController.present(sheet, animated: false)
             } else {
                 AlertController.shared.showAlert(title: "Error", message: errorMessage ?? "Unknow error",

@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - Protocols
 class HolidaysViewModel {
     // MARK: - Properties
     private var service = Service()

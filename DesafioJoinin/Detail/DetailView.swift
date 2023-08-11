@@ -14,7 +14,7 @@ class DetailView: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = 25
         view.backgroundColor = .systemGray6
         return view
     }()
@@ -106,6 +106,7 @@ class DetailView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
@@ -323,18 +324,18 @@ class DetailView: UIView {
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            bannerDescriptionLabelView.topAnchor.constraint(equalTo: topAnchor),
+            bannerDescriptionLabelView.topAnchor.constraint(equalTo: topAnchor, constant: -20),
             bannerDescriptionLabelView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bannerDescriptionLabelView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bannerDescriptionLabelView.heightAnchor.constraint(equalToConstant: 180),
+            bannerDescriptionLabelView.heightAnchor.constraint(equalToConstant: 200),
             
             descriptionLabel.leadingAnchor.constraint(equalTo: bannerDescriptionLabelView.leadingAnchor, constant: 20),
             descriptionLabel.bottomAnchor.constraint(equalTo: bannerDescriptionLabelView.bottomAnchor, constant: -20),
             
-            stackView.topAnchor.constraint(equalTo: bannerDescriptionLabelView.bottomAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: bannerDescriptionLabelView.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
             bannerNameLabelView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             bannerNameLabelView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),

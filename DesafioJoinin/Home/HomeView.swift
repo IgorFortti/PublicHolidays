@@ -20,7 +20,7 @@ class HomeView: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.layer.cornerRadius = 30
+        image.layer.cornerRadius = 25
         image.image = UIImage(named: "BGBlue")
         return image
     }()
@@ -203,10 +203,10 @@ class HomeView: UIView {
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            bannerImageView.topAnchor.constraint(equalTo: topAnchor),
+            bannerImageView.topAnchor.constraint(equalTo: topAnchor, constant: -50),
             bannerImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bannerImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bannerImageView.heightAnchor.constraint(equalToConstant: 180),
+            bannerImageView.heightAnchor.constraint(equalToConstant: 230),
             
             titleLabel.leadingAnchor.constraint(equalTo: bannerImageView.leadingAnchor, constant: 20),
             titleLabel.bottomAnchor.constraint(equalTo: bannerImageView.bottomAnchor, constant: -20),
