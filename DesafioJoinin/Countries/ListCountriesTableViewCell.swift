@@ -32,6 +32,7 @@ class ListCountriesTableViewCell: UITableViewCell {
     }
     // MARK: - Public Methods
     public func setupCell(data: Country) {
+        selectionStyle = .none
         countryLabel.text = data.name
     }
     

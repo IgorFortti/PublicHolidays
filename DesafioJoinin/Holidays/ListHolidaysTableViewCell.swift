@@ -66,6 +66,7 @@ class ListHolidaysTableViewCell: UITableViewCell {
     }
     
     public func setupCell(data: Holiday) {
+        selectionStyle = .none
         nameHolidayLabel.text = data.name
         localNameHolidayLabel.text = data.localName
         dateHolidayLabel.text = data.date

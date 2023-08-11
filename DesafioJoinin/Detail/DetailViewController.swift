@@ -36,6 +36,6 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        title = "Public Holiday"
+        title = "\(viewModel.holiday.date ?? "")"
     }
 }

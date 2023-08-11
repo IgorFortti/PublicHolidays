@@ -22,9 +22,10 @@ class CountriesView: UIView {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.barStyle = .default
+        searchBar.clipsToBounds = true
+        searchBar.layer.cornerRadius = 10
         searchBar.placeholder = "Search for a country"
-        searchBar.backgroundColor = .systemGray6
+        searchBar.backgroundColor = .white
         searchBar.returnKeyType = .search
         return searchBar
     }()
