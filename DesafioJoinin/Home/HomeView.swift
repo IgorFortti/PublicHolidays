@@ -25,6 +25,20 @@ class HomeView: UIView {
         return image
     }()
     
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    lazy var containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +81,7 @@ class HomeView: UIView {
         return textField
     }()
     
-    private lazy var countryArrowButton: UIButton = {
+    lazy var countryArrowButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
@@ -142,13 +156,17 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Objc Method
+    // MARK: - Objc Methods
     @objc func continueButtonTapped() {
         delegate?.continueButtonTapped()
     }
     
     @objc private func doneButtonTapped() {
         yearTextField.resignFirstResponder()
+    }
+    
+    @objc private func countryArrowButtonTapped() {
+        countryTextField.becomeFirstResponder()
     }
     
     // MARK: - Public Method
@@ -160,17 +178,11 @@ class HomeView: UIView {
         enableButton(areTextFieldsPopulate: areTextFieldsPopulated)
     }
     
-    
-    
     // MARK: - Private Methods
     private func setupUI() {
         backgroundColor = .systemGray6
         addSubviews()
         setupContraints()
-    }
-    
-    @objc private func countryArrowButtonTapped() {
-        countryTextField.becomeFirstResponder()
     }
     
     private func updateArrowRotation() {
@@ -193,25 +205,39 @@ class HomeView: UIView {
     private func addSubviews() {
         addSubview(bannerImageView)
         bannerImageView.addSubview(titleLabel)
-        addSubview(countryLabel)
-        addSubview(countryTextField)
+        
+        addSubview(contentView)
+        contentView.addSubview(containerView)
+        
+        containerView.addSubview(countryLabel)
+        containerView.addSubview(countryTextField)
         countryTextField.addSubview(countryArrowButton)
-        addSubview(yearLabel)
-        addSubview(yearTextField)
-        addSubview(continueButton)
+        containerView.addSubview(yearLabel)
+        containerView.addSubview(yearTextField)
+        containerView.addSubview(continueButton)
     }
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            bannerImageView.topAnchor.constraint(equalTo: topAnchor, constant: -50),
+            bannerImageView.topAnchor.constraint(equalTo: topAnchor, constant: -20),
             bannerImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bannerImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bannerImageView.heightAnchor.constraint(equalToConstant: 230),
+            bannerImageView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
             
             titleLabel.leadingAnchor.constraint(equalTo: bannerImageView.leadingAnchor, constant: 20),
             titleLabel.bottomAnchor.constraint(equalTo: bannerImageView.bottomAnchor, constant: -20),
             
-            countryLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150),
+            contentView.topAnchor.constraint(equalTo: bannerImageView.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 338),
+            
+            countryLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
             countryLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             countryTextField.topAnchor.constraint(equalTo: countryLabel.bottomAnchor, constant: 10),

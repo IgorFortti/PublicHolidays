@@ -11,7 +11,7 @@ import FittedSheets
 
 class CountriesCoordinator {
     // MARK: - Properties
-    private var navigationController: UINavigationController
+    private let navigationController: UINavigationController
     
     // MARK: - Initializer
     init(navigationController: UINavigationController) {

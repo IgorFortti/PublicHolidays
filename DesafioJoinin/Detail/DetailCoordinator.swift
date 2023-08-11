@@ -10,7 +10,7 @@ import UIKit
 
 class DetailCoordinator {
     // MARK: - Properties
-    private var navigationController: UINavigationController
+    private let navigationController: UINavigationController
     
     // MARK: - Initializers
     init(navigationController: UINavigationController) {
@@ -23,10 +23,5 @@ class DetailCoordinator {
         let vc = DetailViewController(viewModel: vm)
         self.navigationController.pushViewController(vc, animated: true)
     }
-    
-    public func routeToBack() {
-        navigationController.popViewController(animated: true)
-    }
-    
 }
 

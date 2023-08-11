@@ -9,9 +9,13 @@ import Foundation
 
 class HolidaysViewModel {
     // MARK: - Properties
-    private var service = Service()
-    private var coordinator: HolidaysCoordinator
-    var list: [Holiday] = []
+    private let service = Service()
+    private let coordinator: HolidaysCoordinator
+    private var list: [Holiday] = []
+    
+    public var getList: [Holiday] {
+        return list
+    }
     
     // MARK: - Initializer
     init(coordinator: HolidaysCoordinator) {
@@ -32,6 +36,5 @@ class HolidaysViewModel {
     public func didTapSelectedCell(holiday: Holiday) {
         coordinator.routeToDetail(holiday: holiday)
     }
-    
 }
 

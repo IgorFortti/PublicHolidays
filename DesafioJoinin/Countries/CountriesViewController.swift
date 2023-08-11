@@ -9,7 +9,7 @@ import UIKit
 
 class CountriesViewController: UIViewController {
     // MARK: - Properties
-    private var viewModel: CountriesViewModel
+    private let viewModel: CountriesViewModel
     private var customView: CountriesView?
     
     // MARK: - Initializers
@@ -39,7 +39,7 @@ class CountriesViewController: UIViewController {
         viewModel.dismiss()
     }
 }
-// MARK: - Extension
+// MARK: - Extensions
 extension CountriesViewController: CountriesViewModelFilterDelegate {
     func filteredListReceivedData() {
         customView?.listCountriesTableView.reloadData()

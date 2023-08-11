@@ -9,8 +9,8 @@ import UIKit
 
 class HolidaysViewController: UIViewController {
     // MARK: - Properties
-    var viewModel: HolidaysViewModel
-    var customView: HolidaysView?
+    private let viewModel: HolidaysViewModel
+    private var customView: HolidaysView?
     
     // MARK: - Initializers
     init(viewModel: HolidaysViewModel) {
@@ -41,17 +41,17 @@ class HolidaysViewController: UIViewController {
 // MARK: - Extensions
 extension HolidaysViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.list.count
+        viewModel.getList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListHolidaysTableViewCell.identifier, for: indexPath) as? ListHolidaysTableViewCell
-        cell?.setupCell(data: viewModel.list[indexPath.row])
+        cell?.setupCell(data: viewModel.getList[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell = viewModel.list[indexPath.row]
+        let selectedCell = viewModel.getList[indexPath.row]
         viewModel.didTapSelectedCell(holiday: selectedCell)
     }
     

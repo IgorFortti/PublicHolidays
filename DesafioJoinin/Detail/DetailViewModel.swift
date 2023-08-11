@@ -9,22 +9,22 @@ import Foundation
 
 class DetailViewModel {
     // MARK: - Properties
-    private var coordinator: DetailCoordinator
-    var holiday: Holiday
+    private let coordinator: DetailCoordinator
+    private var holiday: Holiday
     
-    var detailViewControllerTitle: String {
+    public var detailViewControllerTitle: String {
         return holiday.date ?? ""
     }
     
-    var holidayName: String {
+    public var holidayName: String {
         return holiday.name ?? ""
     }
     
-    var holidayLocalName: String {
+    public var holidayLocalName: String {
         return holiday.localName ?? ""
     }
     
-    var holidayLaunchYear: String {
+    public var holidayLaunchYear: String {
         if let launchYear = holiday.launchYear {
             let lauchYearString = String(launchYear)
             return lauchYearString
@@ -33,7 +33,7 @@ class DetailViewModel {
         }
     }
     
-    var holidayFixed: String {
+    public var holidayFixed: String {
         if let fixed = holiday.fixed {
             if fixed {
                 return "This is a fixed holiday"
@@ -45,7 +45,7 @@ class DetailViewModel {
         }
     }
     
-    var holidayGlobal: String {
+    public var holidayGlobal: String {
         if let global = holiday.global {
             if global {
                 return "This is a global holiday"

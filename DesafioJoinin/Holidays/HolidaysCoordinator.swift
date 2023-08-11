@@ -10,7 +10,7 @@ import UIKit
 
 class HolidaysCoordinator {
     // MARK: - Properties
-    private var navigationController: UINavigationController
+    private let navigationController: UINavigationController
     
     // MARK: - Initializers
     init(navigationController: UINavigationController) {
@@ -35,9 +35,4 @@ class HolidaysCoordinator {
         let coordinator = DetailCoordinator(navigationController: navigationController)
         coordinator.start(holiday: holiday)
     }
-    
-    public func routeToBack() {
-        navigationController.popViewController(animated: true)
-    }
-    
 }

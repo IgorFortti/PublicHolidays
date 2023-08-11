@@ -10,7 +10,7 @@ import UIKit
 
 class HomeCoordinator {
     // MARK: - Properties
-    private var navigationController: UINavigationController
+    private let navigationController: UINavigationController
     
     // MARK: - Initializer
     init(navigationController: UINavigationController) {
