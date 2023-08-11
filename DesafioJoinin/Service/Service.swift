@@ -13,37 +13,25 @@ class Service: GenericService {
     //MARK: - Public Methods
     public func getHolidayList(countryCode: String, year: Int, completion: @escaping Completion<[Holiday]>) {
         let url: String = "https://date.nager.at/api/v3/PublicHolidays/\(year)/\(countryCode)"
-        
         AF.request(url, method: .get).validate(statusCode: 200...299).responseDecodable(of: [Holiday].self) { response in
             debugPrint(response)
-            
             switch response.result {
-                
             case .success(let holidays):
-                print("SUCCESS -> \(#function)")
                 completion(holidays, nil)
-                
             case .failure(let error):
-                print("ERROR -> \(#function)")
                 completion(nil, error)
             }
         }
     }
     
-    public func getCountryList(completion: @escaping Completion<[Country]>) {
+    public func getCountries(completion: @escaping Completion<[Country]>) {
         let url: String = "https://date.nager.at/api/v3/AvailableCountries"
-        
         AF.request(url, method: .get).validate(statusCode: 200...299).responseDecodable(of: [Country].self) { response in
             debugPrint(response)
-            
             switch response.result {
-                
             case .success(let holidays):
-                print("SUCCESS -> \(#function)")
                 completion(holidays, nil)
-                
             case .failure(let error):
-                print("ERROR -> \(#function)")
                 completion(nil, error)
             }
         }

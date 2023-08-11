@@ -19,11 +19,23 @@ class CountriesCoordinator {
     }
     
     // MARK: - Public Methods
-    public func start(list: [Country], delegate: CountriesViewModelSelectionDelegate) {
-        let vm = CountriesViewModel(coordinator: self, list: list, delegate: delegate)
-        let vc = CountriesViewController(viewModel: vm)
-        let sheet = SheetViewController(controller: vc, sizes: [.fixed(600)])
-        navigationController.present(sheet, animated: false)
+    public func start(selectionDelegate: CountriesViewModelSelectionDelegate,
+                      failureRequestDelegate: CountriesViewModelRequestFailureDelegate) {
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        let vm = CountriesViewModel(coordinator: self,
+                                    selectionDelegate: selectionDelegate,
+                                    failureRequestDelegate: failureRequestDelegate)
+        vm.fetchRequest() {
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            let vc = CountriesViewController(viewModel: vm)
+            let sheet = SheetViewController(controller: vc, sizes: [.fixed(600)])
+            self.navigationController.present(sheet, animated: false)
+        }
     }
     
     public func backToHome() {

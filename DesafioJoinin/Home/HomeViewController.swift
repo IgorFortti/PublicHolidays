@@ -40,7 +40,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getCountryList()
         viewModel.delegate = self
     }
     
@@ -74,6 +73,10 @@ extension HomeViewController: HomeViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    func failureRequestCountries(message: String) {
+        AlertController.shared.showAlert(title: "Error", message: message, controller: self)
+    }
+    
     func countriesViewControllerDismiss() {
         customView?.isCountryFieldEditing = false
     }

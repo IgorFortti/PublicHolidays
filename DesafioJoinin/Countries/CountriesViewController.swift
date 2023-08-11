@@ -40,7 +40,7 @@ class CountriesViewController: UIViewController {
     }
 }
 // MARK: - Extension
-extension CountriesViewController: CountriesFilterDelegate {
+extension CountriesViewController: CountriesViewModelFilterDelegate {
     func filteredListReceivedData() {
         customView?.listCountriesTableView.reloadData()
     }

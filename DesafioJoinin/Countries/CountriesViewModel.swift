@@ -7,7 +7,11 @@
 
 import Foundation
 
-protocol CountriesFilterDelegate: AnyObject {
+protocol CountriesViewModelRequestFailureDelegate: AnyObject {
+    func failureRequest(message: String)
+}
+
+protocol CountriesViewModelFilterDelegate: AnyObject {
     func filteredListReceivedData()
 }
 
@@ -18,8 +22,10 @@ protocol CountriesViewModelSelectionDelegate: AnyObject {
 
 class CountriesViewModel {
     // MARK: - Properties
-    weak var filterDelegate: CountriesFilterDelegate?
+    weak var failureRequestDelegate: CountriesViewModelRequestFailureDelegate?
+    weak var filterDelegate: CountriesViewModelFilterDelegate?
     weak var selectionDelegate: CountriesViewModelSelectionDelegate?
+    private var service = Service()
     private var coordinator: CountriesCoordinator
     public var filteredList: [Country] = [] {
         didSet {
@@ -40,10 +46,13 @@ class CountriesViewModel {
     }
     
     // MARK: - Initializer
-    init(coordinator: CountriesCoordinator, list: [Country], delegate: CountriesViewModelSelectionDelegate) {
+    init(coordinator: CountriesCoordinator,
+         selectionDelegate: CountriesViewModelSelectionDelegate,
+         failureRequestDelegate: CountriesViewModelRequestFailureDelegate) {
+        
         self.coordinator = coordinator
-        self.list = list
-        self.selectionDelegate = delegate
+        self.selectionDelegate = selectionDelegate
+        self.failureRequestDelegate = failureRequestDelegate
         updateFilteredList(searchText: "")
     }
     
@@ -57,6 +66,17 @@ class CountriesViewModel {
     }
     
     // MARK: - Public Methods
+    public func fetchRequest(completion: @escaping () -> Void) {
+        service.getCountries { [weak self] result, failure in
+            if let result = result {
+                self?.list = result
+            } else {
+                self?.failureRequestDelegate?.failureRequest(message: failure?.localizedDescription ?? "")
+            }
+            completion()
+        }
+    }
+    
     public func updateSearchText(text: String) {
         searchText = text
     }

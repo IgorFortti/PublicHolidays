@@ -25,9 +25,11 @@ class HomeCoordinator {
         
     }
     
-    public func routeToCountries(list: [Country], delegate: CountriesViewModelSelectionDelegate) {
+    public func routeToCountries(SelectionDelegate: CountriesViewModelSelectionDelegate,
+                                 failureRequestDelegate: CountriesViewModelRequestFailureDelegate) {
+        
         let coordinator = CountriesCoordinator(navigationController: navigationController)
-        coordinator.start(list: list, delegate: delegate)
+        coordinator.start(selectionDelegate: SelectionDelegate, failureRequestDelegate: failureRequestDelegate)
     }
     
     public func routeToList(list: [Holiday]) {

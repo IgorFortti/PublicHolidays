@@ -13,6 +13,7 @@ protocol HomeViewModelDelegate: AnyObject {
     func getHolidayListFailure(message: String)
     func countrySelected()
     func countriesViewControllerDismiss()
+    func failureRequestCountries(message: String)
 }
 
 class HomeViewModel {
@@ -53,17 +54,13 @@ class HomeViewModel {
     }
     
     public func didTapCountryTextField() {
-        coordinator.routeToCountries(list: countryList, delegate: self)
+        coordinator.routeToCountries(SelectionDelegate: self, failureRequestDelegate: self)
     }
-    
-    public func getCountryList() {
-        service.getCountryList { [weak self] result, failure in
-            if let result = result {
-                self?.countryList = result
-            } else {
-                debugPrint("\(failure?.localizedDescription ?? nil ?? "")")
-            }
-        }
+}
+
+extension HomeViewModel: CountriesViewModelRequestFailureDelegate {
+    func failureRequest(message: String) {
+        delegate?.failureRequestCountries(message: message)
     }
 }
 
