@@ -14,7 +14,7 @@ class DetailView: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.layer.cornerRadius = 25
+        view.layer.cornerRadius = 17.5
         view.backgroundColor = .systemGray6
         return view
     }()
@@ -25,7 +25,7 @@ class DetailView: UIView {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.text = "Check out details and curiosities\nabout this public holiday"
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textColor = .black
         label.textAlignment = .left
         label.backgroundColor = .clear
@@ -326,10 +326,10 @@ class DetailView: UIView {
             bannerDescriptionLabelView.topAnchor.constraint(equalTo: topAnchor, constant: -20),
             bannerDescriptionLabelView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bannerDescriptionLabelView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bannerDescriptionLabelView.heightAnchor.constraint(equalToConstant: 200),
+            bannerDescriptionLabelView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
             
             descriptionLabel.leadingAnchor.constraint(equalTo: bannerDescriptionLabelView.leadingAnchor, constant: 20),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bannerDescriptionLabelView.bottomAnchor, constant: -20),
+            descriptionLabel.bottomAnchor.constraint(equalTo: bannerDescriptionLabelView.bottomAnchor, constant: -5),
             
             stackView.topAnchor.constraint(equalTo: bannerDescriptionLabelView.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
