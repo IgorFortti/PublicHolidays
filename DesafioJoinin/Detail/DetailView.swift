@@ -244,13 +244,17 @@ class DetailView: UIView {
     }()
     
     // MARK: - Initialiers
-    init(holiday: Holiday) {
+    init(holidayName: String,
+         holidayLocalName: String,
+         holidayLaunchYear: String,
+         holidayFixed: String,
+         holidayGlobal: String) {
         super.init(frame: .zero)
-        populateNameLabelDinamic(text: holiday.name)
-        populateLocalNameLabelDinamic(text: holiday.localName)
-        populateLauchYearLabelDinamic(year: holiday.launchYear)
-        populateFixedLabelDinamic(isFixed: holiday.fixed)
-        populateGlobalLabelDinamic(isGlobal: holiday.global)
+        populateNameLabelDinamic(text: holidayName)
+        populateLocalNameLabelDinamic(text: holidayLocalName)
+        populateLauchYearLabelDinamic(text: holidayLaunchYear)
+        populateFixedLabelDinamic(text: holidayFixed)
+        populateGlobalLabelDinamic(text: holidayGlobal)
         setupUI()
     }
     
@@ -260,55 +264,31 @@ class DetailView: UIView {
     
     // MARK: - Private Methods
     
-    private func populateLocalNameLabelDinamic(text: String?) {
+    private func populateLocalNameLabelDinamic(text: String) {
         localNameLabelDinamic.text = text
     }
     
-    private func populateNameLabelDinamic(text: String?) {
+    private func populateNameLabelDinamic(text: String) {
         nameLabelDinamic.text = text
     }
     
-    private func populateLauchYearLabelDinamic(year: Int?) {
-        if let launchYear = year {
-            let lauchYearString = String(launchYear)
-            launchYearLabelDinamic.text = lauchYearString
-        } else {
-            launchYearLabelDinamic.text = "There is no record of the launch year of this holiday"
-        }
+    private func populateLauchYearLabelDinamic(text: String) {
+        launchYearLabelDinamic.text = text
     }
     
-    private func populateFixedLabelDinamic(isFixed: Bool?) {
-        if let fixed = isFixed {
-            if fixed {
-                fixedLabelDinamic.text = "This is a fixed holiday"
-            } else {
-                fixedLabelDinamic.text = "This isn't a fixed holiday"
-            }
-        } else {
-            fixedLabelDinamic.text = "There is no record about this holiday being fixed or not"
-        }
+    private func populateFixedLabelDinamic(text: String) {
+        fixedLabelDinamic.text = text
     }
     
-    private func populateGlobalLabelDinamic(isGlobal: Bool?) {
-        if let global = isGlobal {
-            if global {
-                globalLabelDinamic.text = "This is a global holiday"
-            } else {
-                globalLabelDinamic.text = "This isn't a global holiday"
-            }
-        } else {
-            globalLabelDinamic.text = "There is no record about this holiday being global or not"
-        }
+    private func populateGlobalLabelDinamic(text: String) {
+        globalLabelDinamic.text = text
     }
-    
-    
     
     private func setupUI() {
         backgroundColor = .white
         addSubviews()
         setupContraints()
     }
-    
     
     private func addSubviews() {
         addSubview(bannerDescriptionLabelView)

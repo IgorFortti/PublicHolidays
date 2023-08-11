@@ -25,17 +25,20 @@ class DetailViewController: UIViewController {
     // MARK: - Overrides Methods
     override func loadView() {
         super.loadView()
-        customView = DetailView(holiday: viewModel.holiday)
+        customView = DetailView(holidayName: viewModel.holidayName,
+                                holidayLocalName: viewModel.holidayLocalName,
+                                holidayLaunchYear: viewModel.holidayLaunchYear,
+                                holidayFixed: viewModel.holidayFixed,
+                                holidayGlobal: viewModel.holidayGlobal)
         view = customView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("%%%%\(viewModel.holiday)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        title = "\(viewModel.holiday.date ?? "")"
+        title = viewModel.detailViewControllerTitle
     }
 }
