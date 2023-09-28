@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2468424980C2F7DAC66B20E /* Pods_DesafioJoinin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */; };
+		F20D2EC2720780E48EC69260 /* Pods_PublicHolidays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E75CE632BCB45255A13591 /* Pods_PublicHolidays.framework */; };
 		FA8F23C92A85119D00B50DC8 /* HolidaysCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F23C82A85119D00B50DC8 /* HolidaysCoordinator.swift */; };
 		FAA16E952A83D8430081F031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E942A83D8430081F031 /* AppDelegate.swift */; };
 		FAA16E972A83D8430081F031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA16E962A83D8430081F031 /* SceneDelegate.swift */; };
@@ -39,11 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C5765F68922940F7D35BA390 /* Pods-DesafioJoinin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJoinin.debug.xcconfig"; path = "Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin.debug.xcconfig"; sourceTree = "<group>"; };
-		DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioJoinin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3DE1441E8263AA36F253F47 /* Pods-DesafioJoinin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioJoinin.release.xcconfig"; path = "Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin.release.xcconfig"; sourceTree = "<group>"; };
+		05E75CE632BCB45255A13591 /* Pods_PublicHolidays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PublicHolidays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F6E5710E0D6C6A14E44A2AB /* Pods-PublicHolidays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PublicHolidays.debug.xcconfig"; path = "Target Support Files/Pods-PublicHolidays/Pods-PublicHolidays.debug.xcconfig"; sourceTree = "<group>"; };
+		AB61B469C5AEF50290D74C03 /* Pods-PublicHolidays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PublicHolidays.release.xcconfig"; path = "Target Support Files/Pods-PublicHolidays/Pods-PublicHolidays.release.xcconfig"; sourceTree = "<group>"; };
 		FA8F23C82A85119D00B50DC8 /* HolidaysCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysCoordinator.swift; sourceTree = "<group>"; };
-		FAA16E912A83D8430081F031 /* DesafioJoinin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioJoinin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA16E912A83D8430081F031 /* PublicHolidays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicHolidays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA16E942A83D8430081F031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA16E962A83D8430081F031 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAA16E982A83D8430081F031 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2468424980C2F7DAC66B20E /* Pods_DesafioJoinin.framework in Frameworks */,
+				F20D2EC2720780E48EC69260 /* Pods_PublicHolidays.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,16 +89,16 @@
 		4BE913567437AD87454E1FDD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C5765F68922940F7D35BA390 /* Pods-DesafioJoinin.debug.xcconfig */,
-				E3DE1441E8263AA36F253F47 /* Pods-DesafioJoinin.release.xcconfig */,
+				0F6E5710E0D6C6A14E44A2AB /* Pods-PublicHolidays.debug.xcconfig */,
+				AB61B469C5AEF50290D74C03 /* Pods-PublicHolidays.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4EE28EECE78C313F3309104B /* Frameworks */ = {
+		D1AA9B41456212AB75AB10D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DECFCCAC206168ECB36F98E9 /* Pods_DesafioJoinin.framework */,
+				05E75CE632BCB45255A13591 /* Pods_PublicHolidays.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,22 +106,22 @@
 		FAA16E882A83D8430081F031 = {
 			isa = PBXGroup;
 			children = (
-				FAA16E932A83D8430081F031 /* DesafioJoinin */,
+				FAA16E932A83D8430081F031 /* PublicHolidays */,
 				FAA16E922A83D8430081F031 /* Products */,
 				4BE913567437AD87454E1FDD /* Pods */,
-				4EE28EECE78C313F3309104B /* Frameworks */,
+				D1AA9B41456212AB75AB10D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		FAA16E922A83D8430081F031 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FAA16E912A83D8430081F031 /* DesafioJoinin.app */,
+				FAA16E912A83D8430081F031 /* PublicHolidays.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FAA16E932A83D8430081F031 /* DesafioJoinin */ = {
+		FAA16E932A83D8430081F031 /* PublicHolidays */ = {
 			isa = PBXGroup;
 			children = (
 				FAB5F6AB2A83F56D00F65990 /* Model */,
@@ -137,7 +137,7 @@
 				FAA16E9F2A83D8460081F031 /* LaunchScreen.storyboard */,
 				FAA16EA22A83D8460081F031 /* Info.plist */,
 			);
-			path = DesafioJoinin;
+			path = PublicHolidays;
 			sourceTree = "<group>";
 		};
 		FAAA11ED2A8517F100D19CE5 /* Countries */ = {
@@ -216,23 +216,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FAA16E902A83D8430081F031 /* DesafioJoinin */ = {
+		FAA16E902A83D8430081F031 /* PublicHolidays */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FAA16EA52A83D8460081F031 /* Build configuration list for PBXNativeTarget "DesafioJoinin" */;
+			buildConfigurationList = FAA16EA52A83D8460081F031 /* Build configuration list for PBXNativeTarget "PublicHolidays" */;
 			buildPhases = (
-				B3E36B1235097EB0139AE51C /* [CP] Check Pods Manifest.lock */,
+				4BE88354D4C213333359F331 /* [CP] Check Pods Manifest.lock */,
 				FAA16E8D2A83D8430081F031 /* Sources */,
 				FAA16E8E2A83D8430081F031 /* Frameworks */,
 				FAA16E8F2A83D8430081F031 /* Resources */,
-				93360854466839D7582C8E4F /* [CP] Embed Pods Frameworks */,
+				C29ADBC7D96B5612B8FBA935 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DesafioJoinin;
+			name = PublicHolidays;
 			productName = DesafioJoinin;
-			productReference = FAA16E912A83D8430081F031 /* DesafioJoinin.app */;
+			productReference = FAA16E912A83D8430081F031 /* PublicHolidays.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +250,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FAA16E8C2A83D8430081F031 /* Build configuration list for PBXProject "DesafioJoinin" */;
+			buildConfigurationList = FAA16E8C2A83D8430081F031 /* Build configuration list for PBXProject "PublicHolidays" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -263,7 +263,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FAA16E902A83D8430081F031 /* DesafioJoinin */,
+				FAA16E902A83D8430081F031 /* PublicHolidays */,
 			);
 		};
 /* End PBXProject section */
@@ -281,24 +281,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		93360854466839D7582C8E4F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioJoinin/Pods-DesafioJoinin-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3E36B1235097EB0139AE51C /* [CP] Check Pods Manifest.lock */ = {
+		4BE88354D4C213333359F331 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,11 +296,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DesafioJoinin-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PublicHolidays-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C29ADBC7D96B5612B8FBA935 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PublicHolidays/Pods-PublicHolidays-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PublicHolidays/Pods-PublicHolidays-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PublicHolidays/Pods-PublicHolidays-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -488,7 +488,7 @@
 		};
 		FAA16EA62A83D8460081F031 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5765F68922940F7D35BA390 /* Pods-DesafioJoinin.debug.xcconfig */;
+			baseConfigurationReference = 0F6E5710E0D6C6A14E44A2AB /* Pods-PublicHolidays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,7 +496,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FR8BBNFFSR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DesafioJoinin/Info.plist;
+				INFOPLIST_FILE = PublicHolidays/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -506,7 +506,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorfortti.DesafioJoinin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorfortti.PublicHolidays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -516,7 +516,7 @@
 		};
 		FAA16EA72A83D8460081F031 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3DE1441E8263AA36F253F47 /* Pods-DesafioJoinin.release.xcconfig */;
+			baseConfigurationReference = AB61B469C5AEF50290D74C03 /* Pods-PublicHolidays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,7 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FR8BBNFFSR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DesafioJoinin/Info.plist;
+				INFOPLIST_FILE = PublicHolidays/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -534,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorfortti.DesafioJoinin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorfortti.PublicHolidays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -545,7 +545,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FAA16E8C2A83D8430081F031 /* Build configuration list for PBXProject "DesafioJoinin" */ = {
+		FAA16E8C2A83D8430081F031 /* Build configuration list for PBXProject "PublicHolidays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAA16EA32A83D8460081F031 /* Debug */,
@@ -554,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FAA16EA52A83D8460081F031 /* Build configuration list for PBXNativeTarget "DesafioJoinin" */ = {
+		FAA16EA52A83D8460081F031 /* Build configuration list for PBXNativeTarget "PublicHolidays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAA16EA62A83D8460081F031 /* Debug */,
