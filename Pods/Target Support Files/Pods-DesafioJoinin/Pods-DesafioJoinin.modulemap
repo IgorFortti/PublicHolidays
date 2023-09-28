@@ -1,6 +1,0 @@
-framework module Pods_DesafioJoinin {
-  umbrella header "Pods-DesafioJoinin-umbrella.h"
-
-  export *
-  module * { export * }
-}

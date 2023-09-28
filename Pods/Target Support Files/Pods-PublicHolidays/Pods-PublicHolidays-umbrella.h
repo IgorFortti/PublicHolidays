@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_DesafioJoininVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_DesafioJoininVersionString[];
+FOUNDATION_EXPORT double Pods_PublicHolidaysVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PublicHolidaysVersionString[];
 
